@@ -84,7 +84,7 @@ jobs:
       run: echo $TAG_NAME - $RELEASE_TIME
       env:
           TAG_NAME: Flutter-ARM64
-          RELEASE_TIME: ${{ steps.date.outputs.date }}
+          RELEASE_TIME: 3.19.4
     - name: Release Engine
       uses: ncipollo/release-action@v1
       with:
