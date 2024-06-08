@@ -58,6 +58,9 @@ jobs:
         ]' >> flutter-engine/.gclient
         cd flutter-engine
         gclient sync
+        cd src/flutter
+        git checkout 3.19.4
+        cd ../../
     - name: Build Engine
       run: |
         export PATH="$PATH:$PWD/depot_tools"
@@ -92,6 +95,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: "flutter-engine/src/out/*.zip"
-        tag: Flutter-ARM64-${{ steps.date.outputs.date }}
-        token: ${{ secrets.RELEASE_TOKEN }}
+        tag: Flutter-ARM64-3.19.4
+        token: ${{ secrets.GH_TOKEN }}
         allowUpdates: true
