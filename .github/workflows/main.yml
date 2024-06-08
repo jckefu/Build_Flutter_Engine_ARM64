@@ -67,9 +67,9 @@ jobs:
         cd flutter-engine/src
         ls flutter/
         ls flutter/tools
-        ./flutter/tools/gn --target-os linux --linux-cpu arm64 --no-goma --runtime-mode release
+        ./flutter/tools/gn --target-os linux --linux-cpu arm64 --no-prebuilt-dart-sdk --no-goma --runtime-mode release
         ninja -C out/linux_release_arm64
-        ./flutter/tools/gn --target-os linux --linux-cpu arm64 --no-goma --runtime-mode debug
+        ./flutter/tools/gn --target-os linux --linux-cpu arm64 --no-prebuilt-dart-sdk --no-goma --runtime-mode debug
         ninja -C out/linux_debug_arm64
     - name: Zip Engine
       run: |
