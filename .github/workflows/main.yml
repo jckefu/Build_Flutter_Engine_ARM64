@@ -61,6 +61,11 @@ jobs:
         cd src/flutter
         git checkout 3.19.4
         cd ../../
+        cd src/third_party
+        mkdir dart
+        cd dart
+        git clone https://github.com/dart-lang/sdk.git
+        cd ../../../
     - name: Build Engine
       run: |
         export PATH="$PATH:$PWD/depot_tools"
